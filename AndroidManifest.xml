@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- changelog
+1.0.2
+about is back
+better set-cow-dialog
+
+1.0.1
+temp fix, fc on menu-about, removed button
+
+1.0 
+initial release
+//-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+     android:versionCode="3"
+     android:versionName="1.0.2"
+     android:installLocation="auto"
+     package="nl.frankkie.cowsay">
+         
+    <uses-sdk
+    android:minSdkVersion="3"
+    android:targetSdkVersion="11"/>
+    
+    
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    
+    <uses-feature 
+    android:name="android.hardware.touchscreen" 
+    android:required="false"/>
+    
+    <supports-screen
+  android:smallScreens="true"
+  android:normalScreens="true"
+  android:largeScreens="true"
+  android:anyDensity="true"/>
+         
+    <application android:label="Cowsay" android:icon="@drawable/icon_cow">
+        <activity android:name=".MainActivity" android:label="CowSay">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ReceiveActivity"  android:label="CowSay Recieve">
+            <intent-filter>
+    <!-- to recieve text //-->
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.SEND" />
+                <data android:mimeType="text/plain" />  
+            </intent-filter>  
+        </activity>
+    </application>
+</manifest>
